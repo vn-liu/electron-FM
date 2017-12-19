@@ -1,5 +1,6 @@
 {
   "name": "electron-fm",
+  "productName": "MAC-FM",
   "version": "1.0.0",
   "description": "ximalaya-FM",
   "main": "main.js",
@@ -26,9 +27,7 @@
       "node_modules/",
       "package.json"
     ],
-    "directories": {
-      "buildResources": "assets"
-    },
+    "icon": "build/app-icon.icns",
     "dmg": {
       "contents": [
         {

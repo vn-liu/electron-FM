@@ -17,7 +17,7 @@ function createWindow () {
         protocol: 'file:',
         slashes: true
     }) //开发环境开启热更新
-    mainWindow = new BrowserWindow({width: 1000, height: 800})
+    mainWindow = new BrowserWindow({width: 1000, height: 800, title: app.getName()})
     // and load the index.html of the app.
     mainWindow.loadURL(openUrl)
     app.setAboutPanelOptions({//macOS
@@ -37,7 +37,8 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
-app.dock.setIcon('./icon/app-icon.png')
+app.dock.setIcon(__dirname + '/build/icons/app-icon.icns')// set logo
+app.setName('MAC-FM')
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
     // On OS X it is common for applications and their menu bar
