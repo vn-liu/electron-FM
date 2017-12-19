@@ -23,12 +23,18 @@
     "appId": "com.XMLYFM",
     "files": [
       "build/",
+      "icon/",
       "main.js",
       "node_modules/",
       "package.json"
     ],
-    "icon": "build/app-icon.icns",
+    "mac": {
+      "icon": "icon/app-icon.icns",
+      "target": "dmg"
+    },
     "dmg": {
+      "icon": "icon/app-icon.icns",
+      "title": "MAC-FM",
       "contents": [
         {
           "x": 130,

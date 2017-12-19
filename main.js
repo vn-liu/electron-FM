@@ -37,7 +37,7 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
-app.dock.setIcon(__dirname + '/build/icons/app-icon.icns')// set logo
+// app.dock.setIcon('build/icons/app-icon.icns')// set logo
 app.setName('MAC-FM')
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
