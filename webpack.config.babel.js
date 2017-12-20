@@ -8,6 +8,7 @@ import path from 'path'
 const ENV = process.env.NODE_ENV ||  'development'
 const CSS_MAPS = ENV !== 'production'
 module.exports = {
+    target: 'electron-renderer',
     context: path.resolve(__dirname, 'app'),
     entry: './app.js',
     output: {
@@ -83,6 +84,9 @@ module.exports = {
                 use: ENV === 'production' ? 'file-loader?name=[path][name]_[hash:base64:5].[ext]' : 'url-loader'
             }
         ]
+    },
+    node: {
+        fs: "empty"
     },
     plugins: ([
         new webpack.NoEmitOnErrorsPlugin(),
