@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 
+import axios from 'axios'
 
 export default class HomePage extends Component {
 
+    componentDidMount () {
+        axios.get('http://i.qingting.fm/capi/neo-recommend/attrs').then((data) => {console.log(data)})
+    }
 
-
-
-    render() {
-        return(
+    render () {
+        return (
             <div>hello world</div>
         )
     }

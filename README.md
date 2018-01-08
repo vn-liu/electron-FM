@@ -1,2 +1,2 @@
 # electron-FM
-喜马拉雅客户端
+FM客户端
