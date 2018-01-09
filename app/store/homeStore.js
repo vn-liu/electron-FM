@@ -10,11 +10,16 @@ class homeStore {
         }
     })
 
+     initHome = autorun(() => {
+        if(!this.listData) {
+            this.getAllId()
+        }
+    })
     async getListDetail (queryString) {
         let data = await api.get(`http://recpage.c.qingting.fm/v2/hotpage/category/${queryString}`)
     }
 
-    async getAll () {
+    async getAllId () {
         let data = await api.get('http://i.qingting.fm/capi/neo-recommend/attrs')
         runInAction('get all listId', () => {
             this.listData = data

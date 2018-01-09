@@ -7,8 +7,7 @@ import { inject, observer } from 'mobx-react'
 export default class HomePage extends Component {
 
     componentDidMount () {
-        console.log(this.props.homeStore.getAll())
-        // axios.get('http://i.qingting.fm/capi/neo-recommend/attrs').then((data) => {console.log(data)})
+
     }
 
     render () {
