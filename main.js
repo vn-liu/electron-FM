@@ -10,15 +10,16 @@ const url = require('url')
 let mainWindow
 function createWindow () {
     // Create the browser window.
-    console.log(process.env.NODE_ENV, 'env')
     const openUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:5555/' : url.format({
         pathname: path.join(__dirname, './build/index.html'),
         protocol: 'file:',
         slashes: true
     }) //开发环境开启热更新
-    mainWindow = new BrowserWindow({width: 1000, height: 800, title: app.getName(),maxHeight: 800,fullscreenable: false,
-        maxHeight: 900, titleBarStyle: 'hidden', backgroundColor: '#fff'})
-    // and load the index.html of the app.
+    mainWindow = new BrowserWindow({show: false, width: 1000, height: 800, title: app.getName(),maxHeight: 800,fullscreenable: false,
+        maxHeight: 900, titleBarStyle: 'hiddenInset', backgroundColor: '#fff'})
+
+    mainWindow.once('ready-to-show', () => {mainWindow.show()})
+
     mainWindow.loadURL(openUrl)
     app.setAboutPanelOptions({//macOS
         applicationName: 'XMLYFM',

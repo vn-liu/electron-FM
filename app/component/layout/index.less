@@ -1,10 +1,38 @@
 body {
   margin: 0;
   padding: 0;
-  .header-nav {
+  -webkit-user-select:none;
+  font-family: 'BlinkMacSystemFont', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, 'sans-serif';
+  -webkit-font-smoothing: subpixel-antialiased;
+  #root {
     width: 100%;
-    height: 30px;
-    -webkit-app-region: drag;
-    background: #ccc;
+    height: 100%;
   }
+  .layer {
+    width: 100%;
+    height: 100%;
+    .header-nav {
+      position: fixed;
+      width: 100%;
+      height: 50px;
+      -webkit-app-region: drag;
+      background: #E0E5E7;
+      border: 1px solid #ccc;
+    }
+    .sidebar {
+      position: fixed;
+      width: 200px;
+      height: 100%;
+      top: 51px;
+      left: 0;
+      background: #E0E5E7;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+#portal {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
